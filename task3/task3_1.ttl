@@ -1,0 +1,158 @@
+@prefix : <http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17/> .
+
+<http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Включает
+:Включает rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Имеет_подписку
+:Имеет_подписку rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Запрашивает
+:Запрашивает rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Автор
+:Автор rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#ВалидныйПросмотр
+:ВалидныйПросмотр rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Эпизод
+:Эпизод rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Сериал
+:Сериал rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Просмотр
+:Просмотр rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Подписка
+:Подписка rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Зритель
+:Зритель rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Эпизод_BB_S01E01
+:Эпизод_BB_S01E01 rdf:type owl:NamedIndividual ,
+                           :Эпизод .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Эпизод_BB_S01E02
+:Эпизод_BB_S01E02 rdf:type owl:NamedIndividual ,
+                           :Эпизод .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Эпизод_BM_S01E01
+:Эпизод_BM_S01E01 rdf:type owl:NamedIndividual ,
+                           :Эпизод .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Эпизод_SM_E01
+:Эпизод_SM_E01 rdf:type owl:NamedIndividual ,
+                        :Эпизод .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Сериал_Во_все_тяжкие
+:Сериал_Во_все_тяжкие rdf:type owl:NamedIndividual ,
+                               :Сериал ;
+                      :Включает :Эпизод_BB_S01E01 ,
+                                :Эпизод_BB_S01E02 .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Просмотр_1
+:Просмотр_1 rdf:type owl:NamedIndividual ,
+                     :Просмотр ;
+            :Запрашивает :Эпизод_BB_S01E01 ;
+            :Автор :Зритель_Иван .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Просмотр_2
+:Просмотр_2 rdf:type owl:NamedIndividual ,
+                     :Просмотр ;
+            :Запрашивает :Эпизод_BB_S01E01 ;
+            :Автор :Зритель_Мария .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Просмотр_3
+:Просмотр_3 rdf:type owl:NamedIndividual ,
+                     :Просмотр ;
+            :Запрашивает :Эпизод_SM_E01 ;
+            :Автор :Зритель_Мария .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Зритель_Иван
+:Зритель_Иван rdf:type owl:NamedIndividual ,
+                       :Зритель ;
+              :Имеет_подписку :Подписка_Премиум .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Зритель_Мария
+:Зритель_Мария rdf:type owl:NamedIndividual ,
+                        :Зритель ;
+               :Имеет_подписку :Подписка_Детская .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Сериал_Друзья
+:Сериал_Друзья rdf:type owl:NamedIndividual ,
+                        :Сериал .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Подписка_Премиум
+:Подписка_Премиум rdf:type owl:NamedIndividual ,
+                           :Подписка ;
+                  :Включает :Сериал_Во_все_тяжкие .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Подписка_Стандарт
+:Подписка_Стандарт rdf:type owl:NamedIndividual ,
+                            :Подписка ;
+                   :Включает :Сериал_Черное_зеркало .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Сериал_Черное_зеркало
+:Сериал_Черное_зеркало rdf:type owl:NamedIndividual ,
+                                :Сериал ;
+                       :Включает :Эпизод_BM_S01E01 .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Подписка_Детская
+:Подписка_Детская rdf:type owl:NamedIndividual ,
+                           :Подписка ;
+                  :Включает :Сериал_Смешарики .
+
+###  http://www.semanticweb.org/admin/ontologies/2025/11/untitled-ontology-17#Сериал_Смешарики
+:Сериал_Смешарики rdf:type owl:NamedIndividual ,
+                           :Сериал ;
+                  :Включает :Эпизод_SM_E01 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
